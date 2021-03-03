@@ -2,6 +2,10 @@ from requests import get, post
 import json
 from dateutil import parser
 import datetime
+import requests
+import lxml
+import bs4
+import os
 
 # Module variables to connect to moodle api:
 # Insert token and URL for your site here.
@@ -112,15 +116,17 @@ data[0]['section'] = 3
 
 # Write the data back to Moodle
 #sec_write = LocalUpdateSections(courseid, data)
+# res = requests.get("https://github.com/mikhail-cct/ca3-test")
+# soup = bs4.BeautifulSoup(res.text,"lxml")
+# print(soup)
 
-sec5 = LocalGetSections(courseid)
-print(json.dumps(sec.getsections[0]['summary'], indent=4, sort_keys=True))
-print(json.dumps(sec.getsections, indent=4, sort_keys=True))
+# print(sec)
+print(json.dumps(sec.getsections[4]['summary'], indent=4, sort_keys=True))
+#print(json.dumps(sec.getsections, indent=4, sort_keys=True))
+data = [{'type': 'num', 'section': 1, 'name': 'Four§', 'summary': '<p>section FOUR</p>', 'summaryformat': 1, 'visible': 1 , 'highlight': 0, 'sectionformatoptions': [{'name': 'level', 'value': '1'}]},  {'type': 'num', 'section': 3, 'name': '3', 'summary': '<p>section THREE</p>', 'summaryformat': 1, 'visible': 0 , 'highlight': 0, 'sectionformatoptions': [{'name': 'level', 'value': '0'}]}]
 
 
 
 # update 
-# data = [{'type': 'num', 'section': 4, 'name': 'Four§', 'summary': '<p>section FOUR</p>', 'summaryformat': 1, 'visible': 1 , 'highlight': 0, 'sectionformatoptions': [{'name': 'level', 'value': '1'}]},\
-#         {'type': 'num', 'section': 3, 'name': '3', 'summary': '<p>section THREE</p>', 'summaryformat': 1, 'visible': 0 , 'highlight': 0, 'sectionformatoptions': [{'name': 'level', 'value': '0'}]}]
-# sec = LocalUpdateSections(courseid, data)
+# # sec = LocalUpdateSections(courseid, data)
 # print(sec.updatesections)
