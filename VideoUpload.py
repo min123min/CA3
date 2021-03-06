@@ -20,4 +20,27 @@ def GdriveScrape(url):
         links.append(video.parent.parent.parent.parent.attrs['data-id'])
     return links,video_titles
 NewLinks, newVideoTitles = GdriveScrape(GoogleDrive)
-print(newVideoTitles[0])
+lowestCount = 0
+dateOne = newVideoTitles[0]["aria-label"]
+i = 0
+while i != 100:
+    for num in newVideoTitles[i]["aria-label"]:
+        if(num==" "):
+            newVideoTitles[i]["aria-label"]= newVideoTitles[i]["aria-label"][:num]
+            # newVideoTitles[i]["aria-label"]= newVideoTitles[i].__index__(" ")
+        
+    
+    i +=1
+print(newVideoTitles)
+dateTwo
+
+theLooped = datetime.datetime(newVideoTitles[0]["aria-label"])
+secondedDate= datetime.datetime(newVideoTitles[0+1]["aria-label"])
+print("d1 is greater than d2 : ", theLooped > secondedDate) 
+# while i<100:
+#     theLooped = datetime.datetime(newVideoTitles[i]["aria-label"])
+#     secondedDate= datetime.datetime(newVideoTitles[i+1]["aria-label"])
+#     if()
+
+print(newVideoTitles[0]["aria-label"])
+#print(NewLinks)
