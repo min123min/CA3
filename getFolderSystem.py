@@ -133,11 +133,12 @@ summary = '<a href="https://mikhail-cct.github.io/ca3-test/wk1/slides.md">Week 1
 # try:
 # Write the data back to Moodle 
 print(json.dumps(sec.getsections[1]["sectionnum"], indent=4, sort_keys=True))
+print(json.dumps(sec.getsections[1]["title"], indent=4, sort_keys=True))
 for section in sec.getsections:
     num =data[0]['section']
     data[0]['summary'] = '<a href="https://mikhail-cct.github.io/ca3-test/wk'+ str(num) + '/slides.md">Week '+ str(num) + ': this the slides </a><br>'+'<a href="https://mikhail-cct.github.io/ca3-test/wk'+ str(num) + '/wk'+ str(num) + '.pdf">Week '+ str(num) + ': this is a pdf</a><br>'+'<a href="https://mikhail-cct.github.io/ca3-test/wk'+ str(num) + '/index.html"> week '+ str(num) + ': this is the html file</a><br>'
     data[0]['section'] = section['sectionnum']
-    sec_write = LocalUpdateSections(courseid, data)
+    #sec_write = LocalUpdateSections(courseid, data)
     if(data[0]['summary']==""):
         num =data[0]['section']
        
